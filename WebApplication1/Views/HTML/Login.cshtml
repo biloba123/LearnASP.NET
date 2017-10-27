@@ -1,0 +1,121 @@
+﻿@model WebApplication1.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+
+<table width="320" height="580" border=1>
+    <caption>
+        <font style="font-family:KaiTi;font-size:18pt;color:red">
+            个人信息
+        </font>
+    </caption>
+
+    <tr align="center">
+        <td align="center">
+            用户名
+        </td>
+        <td align="center">
+            @Model.username
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            个人照片
+        </td>
+        <td align="center">
+            <img alt="pic"
+                 src="~/Resource/Image/@Model.pic">
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            密码
+        </td>
+        <td align="center">
+            @Model.pwd
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            性别
+        </td>
+        <td align="center">
+            @Model.sex
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            籍贯
+        </td>
+        <td align="center">
+            @Model.province - @Model.city
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            Email
+        </td>
+        <td align="center">
+            @Model.email
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            手机号
+        </td>
+        <td align="center">
+            @Model.tel
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            专业特长
+        </td>
+        <td align="center">
+            @foreach(String s in Model.master)
+            {
+                @s
+                @:&nbsp;
+            }
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            业余爱好
+        </td>
+        <td align="center">
+            @foreach (String s in Model.habit)
+            {
+                @s
+                @:&nbsp;
+            }
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            出生年月
+        </td>
+        <td align="center">
+            @Model.birthday
+        </td>
+    </tr>
+
+    <tr align="center">
+        <td align="center">
+            备注信息
+        </td>
+        <td align="center">
+            @Model.other
+        </td>
+    </tr>
+
+</table>

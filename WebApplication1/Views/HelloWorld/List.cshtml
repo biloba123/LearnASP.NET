@@ -1,0 +1,11 @@
+﻿@model System.Collections.Generic.List<WebApplication1.Models.Student>
+@{
+    ViewBag.Title = "List";
+}
+
+@for (int i = 0; i < (Model.Count); i++)
+{
+    WebApplication1.Models.Student s = Model[i];
+    <h2>id: @s.id, name: @s.name, age: @s.age</h2>
+}
+

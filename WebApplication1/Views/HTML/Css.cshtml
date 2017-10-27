@@ -1,0 +1,171 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        body {background:url("/Resource/Image/bg.jpg"); }
+        input { background-color:rgba(255, 255, 255, 0.50); } 
+        select { background-color:rgba(255, 255, 255, 0.50); } 
+        textarea { background-color:rgba(255, 255, 255, 0.50); } 
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Css</title>
+</head>
+<body>
+    <center>
+        <form action="/HTML/Login" method="post" enctype="multipart/form-data">
+            <table height="560">
+                <caption>
+                    <font style="font-family:KaiTi;font-size:18pt;color:black">
+                        请输入个人信息
+                    </font>
+                </caption>
+
+                <tr align="center">
+                    <td align="right">
+                        用户名
+                    </td>
+                    <td align="left">
+                        <input type="text" name="username" />
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        密码
+                    </td>
+                    <td align="left">
+                        <input type="password" name="pwd" maxlength="6" />
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        确认密码
+                    </td>
+                    <td align="left">
+                        <input type="password" name="rePwd" maxlength="6" />
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        性别
+                    </td>
+                    <td align="left">
+                        <input type="radio" name="sex" value="男" />男
+                        <input type="radio" name="sex" value="女" />女
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        籍贯
+                    </td>
+                    <td align="left">
+                        <select name="province">
+                            <option value="湖北" selected="selected">湖北</option>
+                            <option value="浙江">浙江</option>
+                            <option value="江苏">江苏</option>
+                        </select>
+                        <select name="city">
+                            <option value="武汉" selected="selected">武汉</option>
+                            <option value="荆门">荆门</option>
+                            <option value="荆州">荆州</option>
+                            <option value="宜昌">宜昌</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        Email
+                    </td>
+                    <td align="left">
+                        <input type="email" name="email" placeholder="如 biloba@gmail.com" />
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        手机号
+                    </td>
+                    <td align="left">
+                        <input type="tel" name="tel" maxlength="11" placeholder="11位，全数字" />
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        专业特长
+                    </td>
+                    <td align="left">
+                        <select name="master" size=4 multiple="multiple">
+                            <option value=".NET编程">.NET编程</option>
+                            <option value="J2EE编程">J2EE编程</option>
+                            <option value="Java编程">Java编程</option>
+                            <option value="Android编程">Android编程</option>
+                            <option value="C语言编程">C语言编程</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        业余爱好
+                    </td>
+                    <td align="left">
+                        <input type="checkbox" name="habit" value="足球" />足球
+                        <input type="checkbox" name="habit" value="篮球" />篮球
+                        <input type="checkbox" name="habit" value="排球" />排球
+                        <input type="checkbox" name="habit" value="唱歌" />唱歌
+                        <input type="checkbox" name="habit" value="其他" />其他
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        个人照片
+                    </td>
+                    <td align="left">
+                        <input type="file" name="pic" />
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        出生年月
+                    </td>
+                    <td align="left">
+                        <input type="date" name="birthday" />
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td align="right">
+                        备注信息
+                    </td>
+                    <td align="left">
+                        <textarea name="other" cols="24" rows="6" placeholder="可以补充一下"></textarea>
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td></td>
+                    <td align="left">
+                        <input type="submit" value="提交" />
+                        &nbsp; &nbsp;
+                        <input type="reset" value="重填" />
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </center>
+</body>
+</html>

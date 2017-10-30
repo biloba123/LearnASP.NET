@@ -1,0 +1,28 @@
+﻿*{
+    font-size:12pt;
+    text-align:center;
+}
+
+#menu{
+    width:inherit;
+    padding:12px;
+    background-color:#1f1f1f;
+}
+
+#menu li{
+    display:inline;
+    list-style-type:none;
+    margin:auto 12px;
+}
+
+#menu li a:link, #menu li a:visited{
+    text-decoration: none;
+    color:rgba(255, 255, 255, 0.60);
+}
+
+#menu li a:hover{
+    text-decoration: none;
+    color:#ffffff;
+    border-bottom:1px #ffffff solid;
+    padding:0px 0px 4px 0px;
+}

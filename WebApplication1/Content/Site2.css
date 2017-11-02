@@ -1,0 +1,76 @@
+﻿body{    
+    background-color: #5c87b2;
+    color: #696969;
+}
+h2{
+    border-bottom: 2px solid #cc9900;
+    color: #996600;
+}
+#main{
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 0px 10px 10px 10px;
+}
+a{
+    color: #034af3; 
+}
+
+/* 菜单样式 ------------------------------*/
+ul#menu{
+    padding: 0px;
+    position: relative;
+    margin: 0;
+}
+ul#menu li{
+    display: inline;
+}
+ul#menu li a {
+    background-color: #e8eef4;
+    padding: 10px 20px;
+    text-decoration: none;
+    line-height: 2.8em;
+    /*CSS3 properties*/
+    border-radius: 4px 4px 0 0;
+}
+ul#menu li a:hover{
+    background-color: #ffffff;
+} 
+
+/* 表格样式 ------------------------------*/
+table{
+    background-color:#ffffff;
+    border:1px solid #c3c3c3;
+    border-collapse:collapse;
+    width:50%;
+}
+table caption{
+    font-weight:bold;
+    color:limegreen;
+}
+table th{
+    background-color:#e8eef4;
+    border:1px solid #c3c3c3;
+    padding:3px;
+}
+table td {
+    border:1px solid #c3c3c3;
+    padding:3px;
+}
+
+/* 表单样式 ------------------------------*/
+label{
+    color:darkcyan;
+    display:inline-block; 
+    width:80px; 
+    text-align:right;
+}
+input[type="text"], input[type="password"]{
+    width: 200px;
+    background-color:lightyellow;
+
+}
+input[type="submit"]{
+    width:60px;
+    padding: 5px;
+}
+

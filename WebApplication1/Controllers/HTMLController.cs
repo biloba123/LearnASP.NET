@@ -37,6 +37,18 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        public String CheckUsername(String username)
+        {
+            if (username.Equals("wustzz"))
+            {
+                return "该用户名已注册";
+            }
+            else
+            {
+                return "OK";
+            }
+        }
+
 
     }
 }

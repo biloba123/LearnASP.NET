@@ -79,10 +79,13 @@
             专业特长
         </td>
         <td align="center">
-            @foreach(String s in Model.master)
+            @if (Model.master != null)
             {
-                @s
-                @:&nbsp;
+                foreach (String s in Model.master)
+                {
+                    @s
+                    @:&nbsp;
+                }
             }
         </td>
     </tr>
@@ -92,10 +95,12 @@
             业余爱好
         </td>
         <td align="center">
-            @foreach (String s in Model.habit)
-            {
-                @s
-                @:&nbsp;
+            @if (Model.habit != null) { 
+                foreach (String s in Model.habit)
+                {
+                    @s
+                    @:&nbsp;
+                }
             }
         </td>
     </tr>

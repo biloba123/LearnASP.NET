@@ -80,6 +80,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -201,6 +203,25 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HTMLController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TestEFController.cs" />
+    <Compile Include="DBModel\DB_EF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_EF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\DB_EF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\DB_EF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_EF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Student.cs">
+      <DependentUpon>DB_EF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -213,10 +234,24 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DB.mdf" />
+    <Content Include="App_Data\DB_log.ldf">
+      <DependentUpon>DB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\menu.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site2.css" />
+    <Content Include="DBModel\DB_EF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DB_EF.edmx</DependentUpon>
+      <LastGenOutput>DB_EF.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBModel\DB_EF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DB_EF.edmx</DependentUpon>
+      <LastGenOutput>DB_EF.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -231,6 +266,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\form.check.js" />
+    <EntityDeploy Include="DBModel\DB_EF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DB_EF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DBModel\DB_EF.edmx.diagram">
+      <DependentUpon>DB_EF.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -290,9 +332,10 @@
     <Content Include="Views\HTML\Css.cshtml" />
     <Content Include="Views\CSS\Index.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\TestEF\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="jquery-ui-1.12.1.custom\" />
     <Folder Include="Resource\HTML练习\" />
     <Folder Include="Resource\WiFi\" />
   </ItemGroup>
@@ -303,6 +346,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

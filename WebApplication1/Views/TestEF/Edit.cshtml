@@ -1,0 +1,13 @@
+﻿@model WebApplication1.DBModel.Student
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>修改学生信息</h2>
+<form action="/TestEF/Edit" method="post">
+    编号：<input type="text" name="ID" readonly="readonly" style="background-color:grey" value="@Model.Id"/><br />
+    姓名：<input type="text" name="Name" value="@Model.Name.Trim()"/><br />
+    年龄：<input type="text" name="Age" value="@Model.Age"/><br />
+    <input type="submit" value="修改" />
+</form>
+

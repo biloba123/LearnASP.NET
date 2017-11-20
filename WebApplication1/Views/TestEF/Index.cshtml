@@ -4,7 +4,18 @@
     ViewBag.Title = "Index";
 }
 
-<a href="/TestEF/Add">添加学生</a>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#query").click(function () {
+                $("#form1").toggle("show");
+            });
+        });
+    </script>
+}
+
+
+<a href="/TestEF/Create">添加学生</a>
 
 <table border="1" width="400">
     <caption>
@@ -21,9 +32,18 @@
             <td>@s.Id</td>
             <td>@s.Name</td>
             <td>@s.Age</td>
-            <td>编辑  删除</td>
+            <td>
+                <a href="/TestEF/Edit/@s.Id">编辑</a>
+                <a href="/TestEF/Delete/@s.Id" onclick="return confirm('确认删除?')">删除</a>
+            </td>
         </tr>
     }
 
 </table>
 
+<a href="#" id="query">查询</a>
+<form id="form1" action="/TestEF/Query" method="post"  style="background-color:grey;width:200px;display:none;">
+    姓名包含：<input type="text" name="s"/><br />
+    年龄小于：<input type="text" name="a"/><br />
+    <input type="submit" value="查询" />
+</form>

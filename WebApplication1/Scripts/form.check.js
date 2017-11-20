@@ -12,7 +12,6 @@
 }
 
 function checkPwd() {
-    alert("ccc");
     var p = document.getElementById("pwd");
     var pt = document.getElementById("pwd_tip");
     var reg = /^[0-9]{6}$/;
@@ -69,7 +68,6 @@ function checkTel() {
 }
 
 function check() {
-    alert("hh");
     return checkUsername() && checkPwd() && checkRePwd() && checkEmail() && checkTel();
 }
 

@@ -333,6 +333,8 @@
     <Content Include="Views\CSS\Index.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\TestEF\Index.cshtml" />
+    <Content Include="Views\TestEF\Create.cshtml" />
+    <Content Include="Views\TestEF\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="jquery-ui-1.12.1.custom\" />

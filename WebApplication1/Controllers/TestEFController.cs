@@ -50,13 +50,16 @@ namespace WebApplication1.Controllers
                 return View(stu);
             }
             return RedirectToAction("Index");
-        }        [HttpPost]
+        }
+
+        [HttpPost]
         public ActionResult Edit(Student stu)
         {
             dbEntities.Entry(stu).State = EntityState.Modified;
             dbEntities.SaveChanges();
             return RedirectToAction("Index");
-        }
+        }
+
         public ActionResult Query(String s, int? a)
         {
             var result = from stu in dbEntities.Students

@@ -25,9 +25,13 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult Create(Movie m)
         {
-            db.Movies.Add(m);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                db.Movies.Add(m);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(m);
         }
 
         public ActionResult Delete(int? id)
@@ -71,9 +75,32 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult Edit(Movie m)
         {
-            db.Entry(m).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid) { 
+                db.Entry(m).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(m);
+        }
+
+        [HttpGet]
+        public ActionResult Index(string movieGenre, string searchString)
+        {
+            var GenreLst = new List<string>();
+            var GenreQry = from d in db.Movies orderby d.Genre select d.Genre;
+            GenreLst.AddRange(GenreQry.Distinct()); //去重
+            ViewBag.movieGenre = new SelectList(GenreLst);
+
+            var movies = from m in db.Movies select m;
+            if (!String.IsNullOrEmpty(movieGenre))
+            {
+                movies = movies.Where(x => x.Genre == movieGenre);
+            }
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+            return View(movies);
         }
 
     }

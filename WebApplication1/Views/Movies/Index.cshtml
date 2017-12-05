@@ -9,6 +9,14 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm("Index", "Movies", FormMethod.Get))
+{
+    <p>
+        电影类型:@Html.DropDownList("movieGenre", "all")
+        电影名称:@Html.TextBox("SearchString")
+        <input type="submit" value="查询" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>

@@ -17,10 +17,10 @@
                     $.ajax({
                         type: "post",
                         url: "CheckUsername",
-                        data: "username=" + u,
+                        data: "username=" + $("#username").val(),
                         dataType: "html",
                         success: function (msg) {
-                            ut.html(msg);
+                            $("#username_tip").html(msg);
                         }
                     });
                 }
@@ -58,6 +58,11 @@
                 }
             });
 
+            $("#birthday").datepicker({
+                dateFormat: "yy-mm-dd",
+                inline: true
+            });
+
         });
     </script>
 }
@@ -69,7 +74,7 @@
 <font style="font-family:KaiTi;font-size:18pt;color:red;padding-left:60px" >
     请输入个人信息
 </font>
-<form action="/HTML/Login" method="post" enctype="multipart/form-data"   onsubmit="return check()">
+<form action="/HTML/Login" method="post" enctype="multipart/form-data" >
     <table height="580">
         <!--<caption>
             <font style="font-family:KaiTi;font-size:18pt;color:red">
